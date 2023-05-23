@@ -1,0 +1,57 @@
+<link rel="stylesheet" type="text/css" href="cryptomoneda.component.css">
+
+<div class="crypto-container">
+  <form (submit)="AgregarCrypto()">
+    <input type="text" placeholder="agregar crypto" name="nuevoNombre" [(ngModel)]="nuevoCrypto">
+    <input type="number" placeholder="precio" name="nuevoPrecio" [(ngModel)]="nuevoPrecio">
+    <input type="text" placeholder="código" name="nuevoCodigo" [(ngModel)]="nuevoCodigo">
+    <button type="submit">agregar</button>
+  </form>
+
+  <div class="search-container">
+    <input type="text" placeholder="Buscar por código" name="filtroCodigo" [(ngModel)]="filtroCodigo">
+    <button type="button" (click)="buscarCrypto()">Buscar</button>
+  </div>
+
+  <p *ngIf="mostrarError" class="error-message">Moneda no registrada</p>
+
+  <button *ngIf="mostrarVolver" (click)="volverTablaPrincipal()">Volver a la tabla principal</button>
+</div>
+
+<div class="crypto-list" *ngIf="!mostrarVolver">
+  <table>
+    <tr>
+      <th>Moneda</th>
+      <th>Precio</th>
+      <th>Codigo</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let c of crypto">
+      <td>{{ c.nombre }}</td>
+      <td>{{ c.precio }}</td>
+      <td>{{ c.codigo }}</td>
+      <td>
+        <button (click)="EliminarCrypto(c.id)">eliminar</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="crypto-list" *ngIf="mostrarVolver">
+  <table>
+    <tr>
+      <th>Moneda</th>
+      <th>Precio</th>
+      <th>Codigo</th>
+      <th></th>
+    </tr>
+    <tr *ngIf="cryptoEncontrada">
+      <td>{{ cryptoEncontrada.nombre }}</td>
+      <td>{{ cryptoEncontrada.precio }}</td>
+      <td>{{ cryptoEncontrada.codigo }}</td>
+      <td>
+        <button (click)="EliminarCrypto(cryptoEncontrada.id)">eliminar</button>
+      </td>
+    </tr>
+  </table>
+</div>

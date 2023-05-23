@@ -1,0 +1,79 @@
+.crypto-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.crypto-container form {
+  display: flex;
+  align-items: center;
+}
+
+.crypto-container input,
+.crypto-container button {
+  margin-right: 10px;
+}
+
+.crypto-container button {
+  padding: 6px 12px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.crypto-container button:hover {
+  background-color: #45a049;
+}
+
+.crypto-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  background-color: #f7f7f7;
+}
+
+.crypto-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.crypto-list th,
+.crypto-list td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.crypto-list th:last-child,
+.crypto-list td:last-child {
+  text-align: center;
+}
+
+.crypto-list td {
+  width: 25%;
+}
+
+.crypto-list button {
+  padding: 6px 12px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.crypto-list button:hover {
+  background-color: #d32f2f;
+}
+
+
+
